@@ -1,0 +1,37 @@
+<table border=1>
+    <tr>
+      <td>Produto</td>
+      <td>Preço</td>
+      <td></td>
+    </tr>
+    <tr *ngFor = "let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <button id="botaoComprar"
+                (click) = "insertCart(product)">
+                  Comprar
+        </button>
+      </td>
+    </tr>
+  </table>
+  
+  <br><br>
+  
+  <table border=1>
+    <tr>
+      <td>Produto</td>
+      <td>Quantidade</td>
+      <td>Preço</td>
+    </tr>
+    <tr *ngFor = "let product of cart">
+      <td>{{ product.name }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </table>
+  
+  <br>
+  
+  <p>Total: R$ {{ total }}</p>
+  
